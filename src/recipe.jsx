@@ -5,8 +5,9 @@ const Recipe = ({ title, calories, image, ingredients }) => {
     <div className={style.recipe}>
       <h1>{title}</h1>
       <ol>
-        {ingredients.map((ingredient) => (
-          <li key={ingredient}>{ingredient.text}</li>
+        {ingredients.map((ingredient, index) => (
+          // The key must be an unique string among your ingredients
+          <li key={`${ingredient.text}-${index}`}>{ingredient.text}</li>
         ))}
       </ol>
       <p>{calories}</p>
